@@ -26,14 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col">
-          <header>
-            <h1>Dashboard</h1>
-            <UserButton showName />
-          </header>
-          <main>
-            <Show when="signed-out"><SignIn routing="hash" /></Show>
-            <Show when="signed-in">{children}</Show>
-          </main>
+          {children}
         </body>
       </html>
     </ClerkProvider>
